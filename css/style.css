@@ -1,0 +1,200 @@
+
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgba(241, 218, 86, 0.7);
+    width: 100vw;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-transform: uppercase;
+}
+a:hover{
+    cursor: pointer;
+    background: #e7b352;
+    padding: 18px;
+    color: #fff;
+    border-radius:15px ;
+}
+
+/*-------------------------------------menu-------------------------------------*/
+header{
+    width: 100vw;
+    height: 100px;
+    background: #000000;
+    display: flex;
+    justify-content: space-around;
+    justify-items: center;
+    align-items: center;
+    color: aliceblue;
+    position: fixed;
+    top: 0;
+}
+span{
+    color:#d4a142;
+}
+#nav-bar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+.nav-items{
+    padding: 10px;
+    margin: 5;
+    border-radius: 15px;
+    list-style: none;
+}
+.nav-items a{
+    color: aliceblue;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    
+}
+
+/*----------------------------home-----------------------------*/
+#home{
+    width: 100vw;
+    height: calc(100vh - 100px);
+    padding-top:95px ;
+    display: flex;
+    justify-content: center;
+}
+
+.home-principal{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 22px;
+}
+.home-principal h2{
+    font-size: 35px;
+    color: aliceblue;
+    padding: 10px;
+    text-align: center;
+}
+.home-principal p{
+    text-align: justify;
+    font-size: 18px;
+}
+.home-btn-contato{
+    width: 480px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin: 22px;
+}
+.home-btn-contato a{
+    text-decoration: none;
+    color: #000000;
+    padding: 15px;
+    border-radius: 15px;
+    background: #e9a228;
+}
+.home-btn-contato a:hover{
+    background: #e7b352;
+    padding: 20px;
+}
+/*--------------home_secundaria---------------------*/
+.home-imagem{
+    width: 50%;
+    margin: 30px;
+    box-shadow: 10px 15px 10px #be8e34;
+    justify-items: center;
+    align-items: center;
+    border-radius: 300px 0;
+    background: #e7a635;
+}
+.home-imagem-h2{
+    font-size: 20px;
+    margin-top: 70px;
+    align-items: center;
+    justify-items: center;
+
+}
+/*--------------------cardapio--------------------------------*/
+#cardapio, #batata-refrigerante {
+        height: calc(100vh - 100px) ;
+        padding: 100px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+       
+    }
+.cradpio-menu {
+    margin-top: 5px;
+    height: 55px;
+    padding: 3px;
+    width: 100vw;
+    background: #fac35e;
+    color: rgb(13, 13, 13);
+    text-align: center;
+    text-transform: capitalize;
+    }
+
+.cardapio-hamburguer{
+    width: 200px;
+    height: 250px;
+    border: 10px;
+    border: 2px solid #d4a142;
+    margin: 0 16px 15px 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-items: center;
+    text-align: center;
+
+}
+.cardapio-hamburguer img{
+    height: 100px;
+    width: 100px;
+}
+.cardapio-hamburguer p{
+    font-size: 12px;
+
+}
+/*-------------------video---------------------------------------------*/
+#video{
+    height: calc(100vh - 100px);
+    padding: 100px;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
+}
+#video h2{
+    background: #fac35e; 
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+}
+.video-galeria{
+    margin-right: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+}
+.video-items{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid black;
+    width: 400px;
+    height: 400px;
+    margin: 25px;
+}
+.video-items h3{
+   color: aliceblue;
+}
+.video-galeria iframe{
+    width: 400px;
+    height: 400px;
+}
+
+
+
+
