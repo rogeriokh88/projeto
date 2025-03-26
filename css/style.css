@@ -1,4 +1,5 @@
 
+@import url(media-mobile-videos.css);
 
 body{
     margin: 0;
@@ -8,13 +9,22 @@ body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-transform: uppercase;
 }
-a:hover{
+
+/*usa variáveis - teste*/
+:root{
+    --color-default:  rgba(241, 218, 86, 0.7);
+    --color-dark: #000;
+}
+
+/*evite usar genericos usas as classas aplicadas nos links*/
+/* a:hover{
     cursor: pointer;
     background: #e7b352;
     padding: 18px;
     color: #fff;
     border-radius:15px ;
-}
+    border: 3px solid red;
+} */
 
 /*-------------------------------------menu-------------------------------------*/
 header{
@@ -25,18 +35,21 @@ header{
     justify-content: space-around;
     justify-items: center;
     align-items: center;
-    color: aliceblue;
+    color: var(--color-default);
     position: fixed;
+    z-index: 2; /*atualizaçao*/
     top: 0;
 }
+
+/*cuida o uso - use com uma classe*/
 span{
     color:#d4a142;
 }
+
 #nav-bar{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 30px;
 }
 .nav-items{
     padding: 10px;
@@ -47,17 +60,25 @@ span{
 .nav-items a{
     color: aliceblue;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-decoration: none;
-    
+    text-decoration: none; 
+    padding: .4rem 1rem;
+}
+
+.nav-items a:hover{
+    background: #d4a142;
+    border-radius: .4rem;
+    transition: .3s;  /*aqui - suavidade ao efeito hover*/
 }
 
 /*----------------------------home-----------------------------*/
 #home{
     width: 100vw;
-    height: calc(100vh - 100px);
+    min-height: calc(100vh - 100px);
     padding-top:95px ;
     display: flex;
     justify-content: center;
+    max-width: 1440px; /* limita o tamanho maximo da tela*/
+    margin: 0 auto;
 }
 
 .home-principal{
@@ -78,6 +99,7 @@ span{
     text-align: justify;
     font-size: 18px;
 }
+
 .home-btn-contato{
     width: 480px;
     display: flex;
@@ -86,6 +108,7 @@ span{
     padding: 20px;
     margin: 22px;
 }
+
 .home-btn-contato a{
     text-decoration: none;
     color: #000000;
@@ -93,38 +116,61 @@ span{
     border-radius: 15px;
     background: #e9a228;
 }
+
 .home-btn-contato a:hover{
     background: #e7b352;
-    padding: 20px;
+
 }
 /*--------------home_secundaria---------------------*/
 .home-imagem{
     width: 50%;
     margin: 30px;
     box-shadow: 10px 15px 10px #be8e34;
-    justify-items: center;
+    justify-content: center;
     align-items: center;
     border-radius: 300px 0;
     background: #e7a635;
+    display: flex;
+    flex-direction: column;
+
 }
+
 .home-imagem-h2{
     font-size: 20px;
     margin-top: 70px;
     align-items: center;
-    justify-items: center;
+    display: flex; /* aqui */
+    flex-direction: column; /*aqui*/
+}
 
+/* aqui */
+.home-imagem-h2 h2{
+    margin: 0;
+}
+
+.home-burguer{
+    display: flex;
+    justify-content: center;
+}
+
+/* aqui */
+.home-burguer img{
+    max-width: 75%;
+    margin: 0 auto;
 }
 /*--------------------cardapio--------------------------------*/
 #cardapio, #batata-refrigerante {
-        height: calc(100vh - 100px) ;
+        min-height: calc(100vh - 100px) ; /*aqui */
         padding: 100px;
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-       
+        max-width: 1440px; /* limita o tamnaho maximo da tela*/
+    margin: 0 auto;
     }
+
 .cradpio-menu {
-    margin-top: 5px;
+    margin: 0 0 10px 0;
     height: 55px;
     padding: 3px;
     width: 100vw;
@@ -135,7 +181,8 @@ span{
     }
 
 .cardapio-hamburguer{
-    width: 200px;
+    flex: 1 0 200px;
+    /* width: 200px; */
     height: 250px;
     border: 10px;
     border: 2px solid #d4a142;
@@ -145,8 +192,17 @@ span{
     flex-direction: column;
     justify-items: center;
     text-align: center;
-
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px rgba(0,0,0,0.4);
 }
+
+.cardapio-hamburguer:hover{
+    cursor: pointer;
+    transition: .5s ease;
+    transform: scale(1.04);
+    background-color: aliceblue;
+}
+
 .cardapio-hamburguer img{
     height: 100px;
     width: 100px;
@@ -157,44 +213,38 @@ span{
 }
 /*-------------------video---------------------------------------------*/
 #video{
-    height: calc(100vh - 100px);
-    padding: 100px;
-    display: flex;
-    justify-items: center;
-    align-items: center;
-    flex-direction: column;
-}
-#video h2{
-    background: #fac35e; 
-    border-radius: 15px;
-    padding: 20px;
-    text-align: center;
-}
-.video-galeria{
-    margin-right: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    justify-items: center;
-}
-.video-items{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
-    border: 1px solid black;
-    width: 400px;
-    height: 400px;
-    margin: 25px;
-}
-.video-items h3{
-   color: aliceblue;
-}
-.video-galeria iframe{
-    width: 400px;
-    height: 400px;
+    padding: 80px 0 60px 0;
+    margin: 0 auto;
 }
 
+
+.video-galeria{
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+   }
+  
+  /*coloca class nos elementos h1,h2,h3,h4,h5,h6 e verificar o CSS BEM*/
+   .video__title{
+    background: var(--color-default);
+    max-width: 200px;
+    padding: 1rem 0;
+    text-align: center;
+    margin: 2rem auto;
+    text-transform: capitalize;
+   }
+  
+   /* tirei os width e os height do vídeo - coloque nas classes melhor de tratar */
+   .video-items iframe{
+    min-height: 400px;
+    width: 400px;
+   }
+
+
+
+ 
 
 
 
